@@ -1,0 +1,323 @@
+{
+  "undefined": {},
+  "public": {
+    "undefined": {},
+    "layout": {
+      "portal": "ካይስ ፖርታል"
+    },
+    "nav": {
+      "home": "ዋና ገጽ",
+      "about": "ስለ እኛ",
+      "sectors": "ሴክተሮች",
+      "contact": "አግኙን",
+      "adminLogin": "አድሚን መግቢያ"
+    },
+    "footer": {
+      "copyright": "የከተማ አስተዳደር መረጃ ሥርዓት። መብቱ በሕግ የተጠበቀ ነው።"
+    },
+    "sectorCard": {
+      "imgAlt": "የ{{name}} ዋና መስሪያ ቤት",
+      "viewDetails": "ዝርዝሮችን ይመልከቱ"
+    },
+    "contactForm": {
+      "undefined": {},
+      "toast": {
+        "success": "መልእክትዎ ደህንነቱ በተጠበቀ ሁኔታ ተላልፏል። እናመሰግናለን!",
+        "error": "መልእክቱን ማስተላለፍ አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
+      },
+      "labels": {
+        "fullName": "ሙሉ ስም",
+        "email": "የኢሜል አድራሻ",
+        "subject": "ጉዳዩ",
+        "message": "መልእክት"
+      },
+      "errors": {
+        "nameRequired": "ስም ያስፈልጋል",
+        "emailRequired": "ኢሜል ያስፈልጋል",
+        "emailInvalid": "የተሳሳተ የኢሜል አድራሻ",
+        "subjectRequired": "ጉዳዩ ያስፈልጋል",
+        "messageRequired": "የመልእክት አካል ያስፈልጋል",
+        "messageMinLength": "እባክዎ ተጨማሪ ዝርዝር ያቅርቡ (ቢያንስ 10 ፊደላት)"
+      },
+      "button": {
+        "submitting": "በደህንነት በማስተላለፍ ላይ...",
+        "submit": "መልእክቱን ላክ"
+      }
+    },
+    "home": {
+      "undefined": {},
+      "hero": {
+        "title": "የአሰላ ከተማ አስተዳደር ፖርታል",
+        "subtitle": "ማህበረሰባችንን በግልፅነት፣ በብቃት እና በቁርጠኝነት ማገልገል። አስተዳደራዊ ሴክተሮቻችንን ያስሱ እና ከአካባቢ መንግስት አገልግሎቶች ጋር ይገናኙ።",
+        "exploreSectors": "ሴክተሮችን ያስሱ",
+        "contactUs": "አግኙን"
+      },
+      "stats": {
+        "activeSectors": "ንቁ ሴክተሮች",
+        "citizensServed": "የተገለገሉ ዜጎች",
+        "publicSupport": "የህዝብ ድጋፍ"
+      },
+      "mayor": {
+        "title": "ከከንቲባው የተላለፈ መልእክት",
+        "defaultMessage": "እንኳን ወደ ይፋዊው የማዘጋጃ ቤት ፖርታል በደህና መጡ። የከተማችንን መሰረተ ልማት ለማዘመን እና የመንግስት አገልግሎቶችን በቀላሉ ለማቅረብ ቆርጠን ተነስተናል።",
+        "readMore": "ሙሉ መግለጫውን ያንብቡ"
+      }
+    },
+    "about": {
+      "undefined": {},
+      "header": {
+        "title": "ስለ ከተማችን",
+        "description": "ስለ ታሪካችን፣ አስተዳደራችን እና የማዘጋጃ ቤት እድገታችንን ስለሚመሩን መሰረታዊ እሴቶች ይወቁ።"
+      },
+      "loading": "የከተማ መረጃን በመጫን ላይ...",
+      "identity": {
+        "title": "ማንነታችን",
+        "subtitle": "የማዘጋጃ ቤታችንን መንግስት የሚያንቀሳቅሱትን መሰረታዊ ምሰሶዎች ያግኙ።"
+      },
+      "history": {
+        "title": "የከተማው ታሪክ",
+        "empty": "እስካሁን ምንም የታሪክ መዝገብ አልታተመም።"
+      },
+      "mission": {
+        "title": "ተልእኳችን",
+        "empty": "እጅግ የላቀ የማዘጋጃ ቤት አገልግሎቶችን መስጠት።"
+      },
+      "vision": {
+        "title": "ራዕያችን",
+        "empty": "ዓለም አቀፍ ደረጃዋን የጠበቀች ዘመናዊ ከተማ መሆን።"
+      },
+      "mayor": {
+        "title": "ይፋዊ የከንቲባው መልእክት",
+        "subtitle": "የከንቲባው ጽሕፈት ቤት",
+        "empty": "ብሩህ የወደፊት ጊዜን አብረን እየገነባን ነው።"
+      }
+    },
+    "sectors": {
+      "undefined": {},
+      "header": {
+        "title": "የከተማ ሴክተሮች እና ክፍሎች",
+        "description": "የከተማችንን ስራዎች የሚያስተዳድሩትን የአስተዳደር ክፍሎች እና የማዘጋጃ ቤት ቅርንጫፎችን ያስሱ።"
+      },
+      "search": {
+        "placeholder": "በክፍል ስም ወይም በቁልፍ ቃላት ይፈልጉ...",
+        "ariaLabel": "ሴክተሮችን ይፈልጉ"
+      },
+      "error": "የክፍሉን መረጃ መጫን አልተቻለም። እባክዎ ቆይተው እንደገና ይሞክሩ።",
+      "empty": {
+        "message": "\"{{term}}\" ጋር የሚዛመዱ ሴክተሮች አልተገኙም",
+        "clear": "ፍለጋን አጽዳ"
+      }
+    },
+    "sectorDetails": {
+      "loading": "የሴክተር መረጃን በመጫን ላይ...",
+      "error": "ሴክተሩ አልተገኘም።",
+      "back": "ወደ ማውጫ ተመለስ",
+      "overview": "የክፍል አጠቃላይ እይታ",
+      "mission": "ተልእኳችን",
+      "vision": "ራዕያችን",
+      "undefined": {},
+      "contact": {
+        "title": "የመገኛ መረጃ",
+        "address": "አድራሻ",
+        "phone": "ስልክ",
+        "email": "ኢሜል",
+        "hours": "የስራ ሰዓታት"
+      },
+      "map": {
+        "title": "የቦታ ካርታ",
+        "openMap": "በGoogle ካርታዎች ላይ ክፈት"
+      }
+    },
+    "contact": {
+      "undefined": {},
+      "header": {
+        "title": "የከተማውን አስተዳደር ያግኙ",
+        "description": "እርስዎን ለመርዳት እዚህ ነን። ጥያቄ ያቅርቡ ወይም በአስተዳደር ጽህፈት ቤቶቻችን ይጎብኙን።"
+      },
+      "info": {
+        "title": "ያግኙን",
+        "description": "አስተዳደራችን ጥብቅ የአገልግሎት ደረጃ ስምምነቶችን ይከተላል። በ24-48 የስራ ሰዓታት ውስጥ ለዲጂታል ጥያቄዎች ምላሽ ይጠብቁ።",
+        "address": "የፖስታ አድራሻ",
+        "phone": "ስልክ ቁጥር",
+        "email": "ኢሜል"
+      },
+      "map": {
+        "locked": "የካርታ መጋጠሚያዎች ተቆልፈዋል"
+      },
+      "form": {
+        "title": "ጥያቄ ይላኩ"
+      }
+    },
+    "login": {
+      "title": "ደህንነቱ የተጠበቀ ፖርታል",
+      "subtitle": "ለተፈቀደላቸው አስተዳደራዊ መግቢያ ብቻ።",
+      "undefined": {},
+      "email": {
+        "label": "የኢሜል አድራሻ",
+        "required": "ኢሜል ያስፈልጋል",
+        "invalid": "የተሳሳተ ኢሜል"
+      },
+      "password": {
+        "label": "የይለፍ ቃል",
+        "required": "የይለፍ ቃል ያስፈልጋል"
+      },
+      "button": {
+        "authenticating": "በማረጋገጥ ላይ...",
+        "submit": "ይግቡ"
+      }
+    },
+    "notFound": {
+      "title": "ገጹ አልተገኘም",
+      "description": "እየፈለጉት ያለው ይፋዊ ገጽ ተንቀሳቅሷል ወይም አሁን ባለው የአስተዳደር ፖርታል ውስጥ የለም።",
+      "button": "ወደ መነሻ ገጽ ተመለስ"
+    }
+  },
+  "admin": {
+    "undefined": {},
+    "layout": {
+      "title": "ካይስ አድሚን",
+      "defaultUser": "አስተዳዳሪ",
+      "signOut": "ውጣ",
+      "mobileTitle": "ካይስ ሞባይል"
+    },
+    "nav": {
+      "dashboard": "ዳሽቦርድ",
+      "sectors": "ሴክተሮች",
+      "cityInfo": "የከተማ መረጃ",
+      "messages": "መልዕክቶች",
+      "auditLogs": "የኦዲት ምዝግብ ማስታወሻዎች",
+      "profile": "መገለጫ"
+    },
+    "mapPicker": {
+      "undefined": {},
+      "toast": {
+        "outsideBounds": "ይህ ቦታ ከአሰላ ከተማ አስተዳደር ውጭ ነው። እባክዎ በአሰላ ውስጥ ያለ ቦታ ይምረጡ።"
+      }
+    },
+    "dashboard": {
+      "title": "የስርዓት ትንታኔ ዳሽቦርድ",
+      "subtitle": "የ CAIS መለኪያዎች እና አስተዳደራዊ እንቅስቃሴዎች ትክክለኛ ጊዜ አጠቃላይ እይታ።",
+      "loading": "የስርዓት ትንታኔን በመጫን ላይ...",
+      "error": "የዳሽቦርድ መለኪያዎችን መጫን አልተቻለም።",
+      "undefined": {},
+      "stats": {
+        "totalSectors": "ጠቅላላ ሴክተሮች",
+        "activeSectors": "ንቁ ሴክተሮች",
+        "totalMessages": "ጠቅላላ መልእክቶች",
+        "unreadMessages": "ያልተነበቡ መልእክቶች",
+        "totalAuditLogs": "ጠቅላላ የኦዲት ምዝግብ ማስታወሻዎች",
+        "systemHealth": "የስርዓት ጤና",
+        "lastLogin": "የመጨረሻ መግቢያ",
+        "appVersion": "የመተግበሪያ ስሪት"
+      },
+      "charts": {
+        "monthlyMessages": "የወርሃዊ መልእክቶች አዝማሚያ",
+        "monthlyActivity": "ወርሃዊ የስርዓት እንቅስቃሴ",
+        "sectorStatus": "የሴክተር ሁኔታ ስርጭት",
+        "messageStatus": "የመልእክት ሁኔታ አጠቃላይ እይታ"
+      },
+      "recent": {
+        "title": "የቅርብ ጊዜ የመገናኛ መልእክቶች"
+      }
+    },
+    "sectorManagement": {
+      "title": "የሴክተር አስተዳደር",
+      "subtitle": "ሁሉንም አስተዳደራዊ ክፍሎች እና ቅርንጫፎች ያስተዳድሩ።",
+      "undefined": {},
+      "button": {
+        "add": "ሴክተር ያክሉ"
+      },
+      "search": {
+        "placeholder": "ሴክተሮችን ይፈልጉ..."
+      }
+    },
+    "cityInfo": {
+      "title": "የከተማ መረጃ አስተዳደር",
+      "subtitle": "በህዝብ ፖርታል ላይ የሚታዩትን መሰረታዊ ዝርዝሮች ያዘምኑ።",
+      "loading": "ውቅር በመጫን ላይ...",
+      "undefined": {},
+      "basic": {
+        "title": "መሰረታዊ መረጃ",
+        "cityName": "የከተማ ስም",
+        "mayorName": "የከንቲባው ስም"
+      },
+      "descriptions": {
+        "title": "ዝርዝር መግለጫዎች"
+      },
+      "contact": {
+        "title": "መገናኛ እና አድራሻ"
+      },
+      "media": {
+        "logo": "ይፋዊ አርማ",
+        "banner": "የከተማ ሰንደቅ",
+        "mayor": "የከንቲባው ፎቶ"
+      },
+      "button": {
+        "save": "ውቅረትን ያስቀምጡ"
+      }
+    },
+    "messages": {
+      "title": "የህዝብ ጥያቄዎች",
+      "undefined": {},
+      "stats": {
+        "total": "ጠቅላላ መልእክቶች",
+        "unread": "ያልተነበቡ",
+        "read": "የተነበቡ",
+        "archived": "በማህደር የተቀመጡ"
+      },
+      "search": {
+        "placeholder": "ስም፣ ኢሜል፣ ወይም ርዕስ ይፈልጉ..."
+      },
+      "button": {
+        "search": "ፈልግ",
+        "clear": "አጽዳ"
+      },
+      "list": {
+        "empty": "ምንም መልእክቶች አልተገኙም።"
+      },
+      "details": {
+        "thread": "የመልእክት ክር",
+        "empty": "ዝርዝሮችን ለማየት መልእክት ይምረጡ"
+      }
+    },
+    "auditLogs": {
+      "title": "የስርዓት ኦዲት መዝገብ",
+      "subtitle": "የሁሉም ግዛት-ተለዋዋጭ አስተዳደራዊ እርምጃዎች የማይለወጥ መዝገብ።",
+      "undefined": {},
+      "denied": {
+        "title": "ፈቃድ ተከልክሏል",
+        "message": "የማይለወጡ የስርዓት ምዝግብ ማስታወሻዎችን ለማየት የሚያስፈልገው የደህንነት ማረጋገጫ የሎትም።"
+      },
+      "filter": {
+        "all": "ሁሉም እርምጃዎች"
+      },
+      "table": {
+        "timestamp": "የጊዜ ማህተም",
+        "adminId": "የአስተዳዳሪ መታወቂያ",
+        "action": "እርምጃ",
+        "target": "የታለመው አካል",
+        "status": "ሁኔታ"
+      }
+    },
+    "profile": {
+      "title": "የአስተዳዳሪ መገለጫ",
+      "subtitle": "ማንነትዎን እና የደህንነት ማረጋገጫ መለኪያዎችዎን ያስተዳድሩ።",
+      "undefined": {},
+      "personal": {
+        "title": "የግል መረጃ",
+        "subtitle": "የእውቂያ ዝርዝሮችዎን እና የማሳያ ስምዎን ያዘምኑ።",
+        "fullName": "ሙሉ ስም"
+      },
+      "password": {
+        "title": "የይለፍ ቃል ይቀይሩ",
+        "subtitle": "መለያዎ ከማዘጋጃ ቤት የደህንነት መስፈርቶች ጋር ለማክበር ረጅም፣ የዘፈቀደ የይለፍ ቃል መጠቀሙን ያረጋግጡ።",
+        "current": "የአሁን የይለፍ ቃል",
+        "new": "አዲስ የይለፍ ቃል"
+      },
+      "button": {
+        "save": "ለውጦችን ያስቀምጡ",
+        "update": "የይለፍ ቃል ያዘምኑ"
+      }
+    }
+  }
+}

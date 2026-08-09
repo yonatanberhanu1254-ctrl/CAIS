@@ -1,0 +1,323 @@
+{
+  "undefined": {},
+  "public": {
+    "undefined": {},
+    "layout": {
+      "portal": "Koorpaa CAIS"
+    },
+    "nav": {
+      "home": "Fuula Duraa",
+      "about": "Waa'ee Keenya",
+      "sectors": "Sektaroota",
+      "contact": "Quunnamtii",
+      "adminLogin": "Seensa Bulchaa"
+    },
+    "footer": {
+      "copyright": "Sirna Odeeffannoo Bulchiinsa Magaalaa. Mirgi hunduu seeraan eegamaadha."
+    },
+    "sectorCard": {
+      "imgAlt": "Waajjira Muummee {{name}}",
+      "viewDetails": "Bal'ina Ilaali"
+    },
+    "contactForm": {
+      "undefined": {},
+      "toast": {
+        "success": "Ergaan keessan haala amansiisaa ta'een dabarfameera. Galatoomaa!",
+        "error": "Ergaa erguun hin milkoofne. Maaloo irra deebiin yaalaa."
+      },
+      "labels": {
+        "fullName": "Maqaa Guutuu",
+        "email": "Teessoo Imeelii",
+        "subject": "Dhimma",
+        "message": "Ergaa"
+      },
+      "errors": {
+        "nameRequired": "Maqaan ni barbaadama",
+        "emailRequired": "Imeeliin ni barbaadama",
+        "emailInvalid": "Teessoon imeelii sirrii miti",
+        "subjectRequired": "Dhimmi ni barbaadama",
+        "messageRequired": "Qaamni ergaa ni barbaadama",
+        "messageMinLength": "Maaloo bal'ina dabalataa kennaa (yoo xiqqaate arfii 10)"
+      },
+      "button": {
+        "submitting": "Nageenyaan dabarsaa jira...",
+        "submit": "Ergaa Ergi"
+      }
+    },
+    "home": {
+      "undefined": {},
+      "hero": {
+        "title": "Koorpaa Bulchiinsa Magaalaa Asallaa",
+        "subtitle": "Hawaasa keenya iftoomina, si'aayina fi of-kennuudhaan tajaajilaa jirra. Sektaroota bulchiinsaa keenya ilaalaa fi tajaajila mootummaa naannoo waliin wal qunnamaa.",
+        "exploreSectors": "Sektaroota Ilaali",
+        "contactUs": "Nu Quunnamaa"
+      },
+      "stats": {
+        "activeSectors": "Sektaroota Hojjetaa Jiran",
+        "citizensServed": "Lammiilee Tajaajilaman",
+        "publicSupport": "Deeggarsa Hawaasaa"
+      },
+      "mayor": {
+        "title": "Ergaa Kantiibaa Irraa",
+        "defaultMessage": "Baga gara koorpaa mootummaa keenyaatti nagaan dhuftan. Bu'uuraale misoomaa magaalaa keenyaa ammayyeessuu fi tajaajila mootummaa haala salphaa ta'een dhiyeessuuf kutanneerra.",
+        "readMore": "Ibsa guutuu dubbisi"
+      }
+    },
+    "about": {
+      "undefined": {},
+      "header": {
+        "title": "Waa'ee Magaalaa Keenyaa",
+        "description": "Waa'ee seenaa, bulchiinsaa fi duudhaalee guddina magaalaa keenyaa qajeelchan bari."
+      },
+      "loading": "Odeeffannoo Magaalaa Fe'aa Jira...",
+      "identity": {
+        "title": "Eenyummaa Keenya",
+        "subtitle": "Utubaawwan mootummaa magaalaa keenyaa sochoosan bari."
+      },
+      "history": {
+        "title": "Seenaa Magaalaa",
+        "empty": "Galmeen seenaa hamma ammaatti hin maxxanfamne."
+      },
+      "mission": {
+        "title": "Ergama Keenya",
+        "empty": "Tajaajila magaalaa sadarkaa olaanaa kennuu."
+      },
+      "vision": {
+        "title": "Mul'ata Keenya",
+        "empty": "Magaalaa ammayyaa sadarkaa addunyaatti beekamtu ta'uu."
+      },
+      "mayor": {
+        "title": "Ergaa Kantiibaa Ofiisaalaa",
+        "subtitle": "Waajjira Kantiibaa",
+        "empty": "Yeroo gara fuula duraa ifaa waliin ijaaraa jirra."
+      }
+    },
+    "sectors": {
+      "undefined": {},
+      "header": {
+        "title": "Sektarootaa fi Muumbaawwan Magaalaa",
+        "description": "Kutaalee bulchiinsaa fi dameewwan magaalaa hojiiwwan magaalaa keenyaa to'atan ilaali."
+      },
+      "search": {
+        "placeholder": "Maqaa muumbaa ykn jechoota furtuutiin barbaadi...",
+        "ariaLabel": "Sektaroota barbaadi"
+      },
+      "error": "Odeeffannoo muumbaa fe'uun hin milkoofne. Maaloo irra deebiin yaalaa.",
+      "empty": {
+        "message": "Sektarootni \"{{term}}\" waliin walsiman hin argamne",
+        "clear": "Barbaacha haqi"
+      }
+    },
+    "sectorDetails": {
+      "loading": "Odeeffannoo Sektaraa Fe'aa Jira...",
+      "error": "Sektarichi hin argamne.",
+      "back": "Gara Galmeetti Deebi'i",
+      "overview": "Ilaalcha Waliigalaa Muumbaa",
+      "mission": "Ergama Keenya",
+      "vision": "Mul'ata Keenya",
+      "undefined": {},
+      "contact": {
+        "title": "Odeeffannoo Quunnamtii",
+        "address": "Teessoo",
+        "phone": "Bilbila",
+        "email": "Imeelii",
+        "hours": "Sa'aatii Hojii"
+      },
+      "map": {
+        "title": "Kaartaa Iddoo",
+        "openMap": "Kaartaa Google irratti bani"
+      }
+    },
+    "contact": {
+      "undefined": {},
+      "header": {
+        "title": "Bulchiinsa Magaalaa Quunnami",
+        "description": "Isin gargaaruuf as jirra. Gaaffii dhiyeessaa ykn waajjira bulchiinsaa keenya dhufaa dubbisaa."
+      },
+      "info": {
+        "title": "Nu Quunnamaa",
+        "description": "Bulchiinsi keenya waliigaltee sadarkaa tajaajilaa cimaa ta'een hojjeta. Gaaffiilee dijitaalaatiif sa'aatii hojii 24-48 keessatti deebii eegaa.",
+        "address": "Teessoo poostaa",
+        "phone": "Lakkoofsa bilbilaa",
+        "email": "Imeelii"
+      },
+      "map": {
+        "locked": "Koordineetiin Kaartaa Cufameera"
+      },
+      "form": {
+        "title": "Gaaffii Ergi"
+      }
+    },
+    "login": {
+      "title": "Koorpaa Nageenyummaa",
+      "subtitle": "Seensa bulchiinsaa eeyyamame qofaaf.",
+      "undefined": {},
+      "email": {
+        "label": "Teessoo Imeelii",
+        "required": "Imeeliin ni barbaadama",
+        "invalid": "Imeelii sirrii miti"
+      },
+      "password": {
+        "label": "Jecha Darbii",
+        "required": "Jechi Darbii ni barbaadama"
+      },
+      "button": {
+        "authenticating": "Mirkaneessaa jira...",
+        "submit": "Seeni"
+      }
+    },
+    "notFound": {
+      "title": "Fuulli hin argamne",
+      "description": "Fuulli ofiisaalaa isin barbaaddan kun sochoofameera ykn koorpaa bulchiinsaa ammaa keessa hin jiru.",
+      "button": "Gara Fuula Duraatti Deebi'i"
+    }
+  },
+  "admin": {
+    "undefined": {},
+    "layout": {
+      "title": "Bulchaa CAIS",
+      "defaultUser": "Bulchaa",
+      "signOut": "Ba'i",
+      "mobileTitle": "CAIS Moobaayilii"
+    },
+    "nav": {
+      "dashboard": "Daashboordii",
+      "sectors": "Sektaroota",
+      "cityInfo": "Odeeffannoo Magaalaa",
+      "messages": "Ergaawwan",
+      "auditLogs": "Galmeewwan Odiitii",
+      "profile": "Piroofaayilii"
+    },
+    "mapPicker": {
+      "undefined": {},
+      "toast": {
+        "outsideBounds": "Iddoon kun Bulchiinsa Magaalaa Asallaa irraa ala. Maaloo iddoo Asallaa keessaa filadhaa."
+      }
+    },
+    "dashboard": {
+      "title": "Gabatee Xiinxala Sirnaa",
+      "subtitle": "Ilaalcha waliigalaa yeroo dhugaa istaatistiksii CAIS fi hojiiwwan bulchiinsaa.",
+      "loading": "Xiinxala Sirnaa Fe'aa Jira...",
+      "error": "Istaatistiksii gabatee fe'uun hin milkoofne.",
+      "undefined": {},
+      "stats": {
+        "totalSectors": "Waliigala Sektarootaa",
+        "activeSectors": "Sektaroota Hojjetaa Jiran",
+        "totalMessages": "Waliigala Ergaawwanii",
+        "unreadMessages": "Ergaawwan Hin Dubbifamne",
+        "totalAuditLogs": "Waliigala Galmee Oodiitii",
+        "systemHealth": "Fayyaa Sirnaa",
+        "lastLogin": "Seensa Dhumaa",
+        "appVersion": "Guca Appii"
+      },
+      "charts": {
+        "monthlyMessages": "Akkaataa Ergaawwan Ji'aa",
+        "monthlyActivity": "Hojii Sirnaa Ji'aa",
+        "sectorStatus": "Raabsa Haala Sektaraa",
+        "messageStatus": "Ilaalcha Haala Ergaa"
+      },
+      "recent": {
+        "title": "Ergaawwan Quunnamtii Dhihoo"
+      }
+    },
+    "sectorManagement": {
+      "title": "Bulchiinsa Sektaraa",
+      "subtitle": "Muumbaawwan fi dameewwan bulchiinsaa hunda bulchi.",
+      "undefined": {},
+      "button": {
+        "add": "Sektara Ida'i"
+      },
+      "search": {
+        "placeholder": "Sektaroota barbaadi..."
+      }
+    },
+    "cityInfo": {
+      "title": "Bulchiinsa Odeeffannoo Magaalaa",
+      "subtitle": "Ibsa ijoo koorpaa ummataa irratti mul'atu haaresi.",
+      "loading": "Qindaa'ina Fe'aa Jira...",
+      "undefined": {},
+      "basic": {
+        "title": "Odeeffannoo Bu'uuraa",
+        "cityName": "Maqaa Magaalaa",
+        "mayorName": "Maqaa Kantiibaa"
+      },
+      "descriptions": {
+        "title": "Ibsa Bal'aa"
+      },
+      "contact": {
+        "title": "Quunnamtii fi Iddoo"
+      },
+      "media": {
+        "logo": "Asxaa Ofiisaalaa",
+        "banner": "Baannarii Magaalaa",
+        "mayor": "Suuraa Kantiibaa"
+      },
+      "button": {
+        "save": "Qindaa'ina Olkahi"
+      }
+    },
+    "messages": {
+      "title": "Gaaffiilee Ummataa",
+      "undefined": {},
+      "stats": {
+        "total": "Waliigala Ergaawwanii",
+        "unread": "Hin Dubbifamne",
+        "read": "Dubbifameera",
+        "archived": "Kuufameera"
+      },
+      "search": {
+        "placeholder": "Maqaa, imeelii, ykn mataduree barbaadi..."
+      },
+      "button": {
+        "search": "Barbaadi",
+        "clear": "Haqi"
+      },
+      "list": {
+        "empty": "Ergaawwan hin argamne."
+      },
+      "details": {
+        "thread": "Haree Ergaa",
+        "empty": "Bal'ina ilaaluuf ergaa filadhu"
+      }
+    },
+    "auditLogs": {
+      "title": "Galmee Oodiitii Sirnaa",
+      "subtitle": "Galmee hin jijjiiramne kan hojiiwwan bulchiinsaa haala jijjiiran hundaa.",
+      "undefined": {},
+      "denied": {
+        "title": "Eeyyamni Dhorkameera",
+        "message": "Galmeewwan sirnaa hin jijjiiramne ilaaluuf eeyyama nageenyaa barbaachisu hin qabdan."
+      },
+      "filter": {
+        "all": "Hojiiwwan Hunda"
+      },
+      "table": {
+        "timestamp": "Chaappaa Yeroo",
+        "adminId": "Eenyummeessaa Bulchaa",
+        "action": "Hojii",
+        "target": "Qaama Irratti Xiyyeeffatame",
+        "status": "Haala"
+      }
+    },
+    "profile": {
+      "title": "Piroofaayilii Bulchaa",
+      "subtitle": "Eenyummaa fi ulaagaalee eeyyama nageenyaa keessanii bulchi.",
+      "undefined": {},
+      "personal": {
+        "title": "Odeeffannoo Dhuunfaa",
+        "subtitle": "Ibsa quunnamtii fi maqaa mul'atu keessan haaresi.",
+        "fullName": "Maqaa Guutuu"
+      },
+      "password": {
+        "title": "Jecha Darbii Jijjiiri",
+        "subtitle": "Akkaawuntiin keessan ulaagaalee nageenyaa magaalaa waliin wal simuuf jecha darbii dheeraa, tasa ta'e fayyadamuu isaa mirkaneeffadhaa.",
+        "current": "Jecha Darbii Ammaa",
+        "new": "Jecha Darbii Haaraa"
+      },
+      "button": {
+        "save": "Jijjiiramoota Olkahi",
+        "update": "Jecha Darbii Haaresi"
+      }
+    }
+  }
+}

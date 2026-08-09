@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "City Administration Information System (CAIS)",
+    "description": "Comprehensive test suite mapping the entire CAIS MVC REST framework. Fully configured with global bearer variables.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Admin Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const response = pm.response.json();",
+                  "if (response.success && response.data && response.data.token) {",
+                  "    pm.collectionVariables.set('token', response.data.token);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"superadmin@cais.gov\",\n    \"password\": \"Admin123!\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": [ "{{baseUrl}}" ], "path": [ "auth", "login" ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Sectors",
+      "item": [
+        {
+          "name": "Create Sector",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Department of Education\",\n    \"description\": \"Manages public schooling and libraries.\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/sectors", "host": [ "{{baseUrl}}" ], "path": [ "sectors" ] }
+          }
+        },
+        {
+          "name": "Get Paginated Sectors",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/sectors?page=1&limit=10", "host": [ "{{baseUrl}}" ], "path": [ "sectors" ], "query": [ { "key": "page", "value": "1" }, { "key": "limit", "value": "10" } ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. City Information",
+      "item": [
+        {
+          "name": "Get City Information (Public)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/city-information", "host": [ "{{baseUrl}}" ], "path": [ "city-information" ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Contact Messages",
+      "item": [
+        {
+          "name": "Submit Message (Public)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"full_name\": \"John Citizen\",\n    \"email\": \"john@example.com\",\n    \"subject\": \"Pothole on Main St\",\n    \"message\": \"There is a massive pothole in front of the library.\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/contact-messages", "host": [ "{{baseUrl}}" ], "path": [ "contact-messages" ] }
+          }
+        },
+        {
+          "name": "Get Admin Messages",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/contact-messages?status=Unread", "host": [ "{{baseUrl}}" ], "path": [ "contact-messages" ], "query": [ { "key": "status", "value": "Unread" } ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Dashboard",
+      "item": [
+        {
+          "name": "Get Complete Dashboard",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/dashboard", "host": [ "{{baseUrl}}" ], "path": [ "dashboard" ] }
+          }
+        },
+        {
+          "name": "Get System Health",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/dashboard/system-health", "host": [ "{{baseUrl}}" ], "path": [ "dashboard", "system-health" ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Audit Logs",
+      "item": [
+        {
+          "name": "Get Audit Logs",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/audit-logs?limit=50&sort=created_at&order=DESC", "host": [ "{{baseUrl}}" ], "path": [ "audit-logs" ], "query": [ { "key": "limit", "value": "50" }, { "key": "sort", "value": "created_at" }, { "key": "order", "value": "DESC" } ] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. System",
+      "item": [
+        {
+          "name": "Health Check (Public)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/health", "host": [ "{{baseUrl}}" ], "path": [ "health" ] }
+          }
+        }
+      ]
+    }
+  ]
+}

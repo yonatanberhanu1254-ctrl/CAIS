@@ -1,0 +1,48 @@
+name: CAIS CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop", "staging" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x]
+        
+    steps:
+    - name: Checkout repository codebase
+      uses: actions/checkout@v3
+      
+    - name: Provision Node.js ${{ matrix.node-version }} Environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install exact dependencies (CI)
+      run: npm ci
+      
+    - name: Execute Security & Syntax Linting
+      run: npm run lint --if-present
+      
+    - name: Execute Automated Test Suites
+      run: npm test --if-present
+      
+    - name: Validate Build Sequence
+      run: npm run build --if-present
+      
+    - name: Archive Production Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: cais-production-build
+        path: |
+          src/
+          public/
+          ecosystem.config.js
+          package.json
+          package-lock.json

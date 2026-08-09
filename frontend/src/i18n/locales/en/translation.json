@@ -1,0 +1,323 @@
+{
+  "undefined": {},
+  "public": {
+    "undefined": {},
+    "layout": {
+      "portal": "CAIS Portal"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "sectors": "Sectors",
+      "contact": "Contact",
+      "adminLogin": "Admin Login"
+    },
+    "footer": {
+      "copyright": "City Administration Information System. All rights reserved."
+    },
+    "sectorCard": {
+      "imgAlt": "Headquarters of {{name}}",
+      "viewDetails": "View Details"
+    },
+    "contactForm": {
+      "undefined": {},
+      "toast": {
+        "success": "Your message has been securely transmitted. Thank you!",
+        "error": "Failed to submit message. Please try again."
+      },
+      "labels": {
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address structure",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message body is required",
+        "messageMinLength": "Please provide more detail (min 10 characters)"
+      },
+      "button": {
+        "submitting": "Transmitting Securely...",
+        "submit": "Submit Message"
+      }
+    },
+    "home": {
+      "undefined": {},
+      "hero": {
+        "title": "Asella City Administration Portal",
+        "subtitle": "Serving our community with transparency, efficiency, and dedication. Explore our administrative sectors and connect with local government services.",
+        "exploreSectors": "Explore Sectors",
+        "contactUs": "Contact Us"
+      },
+      "stats": {
+        "activeSectors": "Active Sectors",
+        "citizensServed": "Citizens Served",
+        "publicSupport": "Public Support"
+      },
+      "mayor": {
+        "title": "Message from the Mayor",
+        "defaultMessage": "Welcome to our official municipal portal. We are dedicated to modernizing our city's infrastructure and providing seamless access to government services.",
+        "readMore": "Read full statement"
+      }
+    },
+    "about": {
+      "undefined": {},
+      "header": {
+        "title": "About Our City",
+        "description": "Learn about our history, administration, and the core values guiding our municipal growth."
+      },
+      "loading": "Loading City Information...",
+      "identity": {
+        "title": "Our Identity",
+        "subtitle": "Discover the foundational pillars that drive our municipal government."
+      },
+      "history": {
+        "title": "City History",
+        "empty": "No historical records have been published yet."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "empty": "To provide excellent municipal services."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "empty": "To become a world-class smart city."
+      },
+      "mayor": {
+        "title": "Official Mayor's Message",
+        "subtitle": "Office of the Mayor",
+        "empty": "We are building a brighter future together."
+      }
+    },
+    "sectors": {
+      "undefined": {},
+      "header": {
+        "title": "City Sectors & Departments",
+        "description": "Browse the administrative divisions and municipal branches that govern our city operations."
+      },
+      "search": {
+        "placeholder": "Search by department name or keywords...",
+        "ariaLabel": "Search sectors"
+      },
+      "error": "Failed to load department data. Please try again later.",
+      "empty": {
+        "message": "No sectors found matching \"{{term}}\"",
+        "clear": "Clear search"
+      }
+    },
+    "sectorDetails": {
+      "loading": "Loading Sector Data...",
+      "error": "Sector not found.",
+      "back": "Back to Directory",
+      "overview": "Department Overview",
+      "mission": "Our Mission",
+      "vision": "Our Vision",
+      "undefined": {},
+      "contact": {
+        "title": "Contact Information",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "hours": "Office Hours"
+      },
+      "map": {
+        "title": "Location Map",
+        "openMap": "Open in Google Maps"
+      }
+    },
+    "contact": {
+      "undefined": {},
+      "header": {
+        "title": "Contact City Hall",
+        "description": "We are here to assist you. Submit an inquiry or visit us at our administrative offices."
+      },
+      "info": {
+        "title": "Get in touch",
+        "description": "Our administration operates with strict service level agreements. Expect a response to digital inquiries within 24-48 business hours.",
+        "address": "Postal address",
+        "phone": "Phone number",
+        "email": "Email"
+      },
+      "map": {
+        "locked": "Map Coordinates Locked"
+      },
+      "form": {
+        "title": "Send an Inquiry"
+      }
+    },
+    "login": {
+      "title": "Secure Portal",
+      "subtitle": "Authorized administrative access only.",
+      "undefined": {},
+      "email": {
+        "label": "Email Address",
+        "required": "Email is required",
+        "invalid": "Invalid email"
+      },
+      "password": {
+        "label": "Password",
+        "required": "Password is required"
+      },
+      "button": {
+        "authenticating": "Authenticating...",
+        "submit": "Sign In"
+      }
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The official page you are looking for has been moved or does not exist within the current administration portal.",
+      "button": "Return to Homepage"
+    }
+  },
+  "admin": {
+    "undefined": {},
+    "layout": {
+      "title": "CAIS Admin",
+      "defaultUser": "Administrator",
+      "signOut": "Sign Out",
+      "mobileTitle": "CAIS Mobile"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "sectors": "Sectors",
+      "cityInfo": "City Info",
+      "messages": "Messages",
+      "auditLogs": "Audit Logs",
+      "profile": "Profile"
+    },
+    "mapPicker": {
+      "undefined": {},
+      "toast": {
+        "outsideBounds": "This location is outside Asella City Administration. Please choose a location within Asella."
+      }
+    },
+    "dashboard": {
+      "title": "System Analytics Dashboard",
+      "subtitle": "Real-time overview of CAIS metrics and administrative activities.",
+      "loading": "Loading System Analytics...",
+      "error": "Failed to load dashboard metrics.",
+      "undefined": {},
+      "stats": {
+        "totalSectors": "Total Sectors",
+        "activeSectors": "Active Sectors",
+        "totalMessages": "Total Messages",
+        "unreadMessages": "Unread Messages",
+        "totalAuditLogs": "Total Audit Logs",
+        "systemHealth": "System Health",
+        "lastLogin": "Last Login",
+        "appVersion": "App Version"
+      },
+      "charts": {
+        "monthlyMessages": "Monthly Messages Trend",
+        "monthlyActivity": "Monthly System Activity",
+        "sectorStatus": "Sector Status Distribution",
+        "messageStatus": "Message Status Overview"
+      },
+      "recent": {
+        "title": "Recent Contact Messages"
+      }
+    },
+    "sectorManagement": {
+      "title": "Sector Management",
+      "subtitle": "Manage all administrative departments and branches.",
+      "undefined": {},
+      "button": {
+        "add": "Add Sector"
+      },
+      "search": {
+        "placeholder": "Search sectors..."
+      }
+    },
+    "cityInfo": {
+      "title": "City Information Management",
+      "subtitle": "Update the core details displayed on the public portal.",
+      "loading": "Loading Configuration...",
+      "undefined": {},
+      "basic": {
+        "title": "Basic Information",
+        "cityName": "City Name",
+        "mayorName": "Mayor's Name"
+      },
+      "descriptions": {
+        "title": "Detailed Descriptions"
+      },
+      "contact": {
+        "title": "Contact & Location"
+      },
+      "media": {
+        "logo": "Official Logo",
+        "banner": "City Banner",
+        "mayor": "Mayor Photo"
+      },
+      "button": {
+        "save": "Save Configuration"
+      }
+    },
+    "messages": {
+      "title": "Public Inquiries",
+      "undefined": {},
+      "stats": {
+        "total": "Total Messages",
+        "unread": "Unread",
+        "read": "Read",
+        "archived": "Archived"
+      },
+      "search": {
+        "placeholder": "Search name, email, or subject..."
+      },
+      "button": {
+        "search": "Search",
+        "clear": "Clear"
+      },
+      "list": {
+        "empty": "No messages found."
+      },
+      "details": {
+        "thread": "Message Thread",
+        "empty": "Select a message to view details"
+      }
+    },
+    "auditLogs": {
+      "title": "System Audit Ledger",
+      "subtitle": "Immutable record of all state-mutating administrative actions.",
+      "undefined": {},
+      "denied": {
+        "title": "Clearance Denied",
+        "message": "You do not possess the required security clearance to view immutable system logs."
+      },
+      "filter": {
+        "all": "All Actions"
+      },
+      "table": {
+        "timestamp": "Timestamp",
+        "adminId": "Admin ID",
+        "action": "Action",
+        "target": "Target Entity",
+        "status": "Status"
+      }
+    },
+    "profile": {
+      "title": "Administrator Profile",
+      "subtitle": "Manage your identity and security clearance parameters.",
+      "undefined": {},
+      "personal": {
+        "title": "Personal Information",
+        "subtitle": "Update your contact details and display name.",
+        "fullName": "Full Name"
+      },
+      "password": {
+        "title": "Change Password",
+        "subtitle": "Ensure your account uses a long, random password to comply with municipal security standards.",
+        "current": "Current Password",
+        "new": "New Password"
+      },
+      "button": {
+        "save": "Save Changes",
+        "update": "Update Password"
+      }
+    }
+  }
+}

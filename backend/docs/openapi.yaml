@@ -1,0 +1,422 @@
+tags:
+  - name: Authentication
+    description: Identity and Access Management
+  - name: Sectors
+    description: Department and Sector Management
+  - name: City Information
+    description: Global city-wide data and branding
+  - name: Contact Messages
+    description: Public engagement and messaging
+  - name: Dashboard
+    description: Administrative analytics
+  - name: Audit Logs
+    description: Immutable system activity tracking
+  - name: System
+    description: Infrastructure monitoring
+
+paths:
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: Authenticate Administrator
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /auth/logout:
+    post:
+      tags: [Authentication]
+      summary: Invalidate Session
+      responses:
+        '200':
+          description: Successfully logged out
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /auth/refresh-token:
+    post:
+      tags: [Authentication]
+      summary: Refresh Access Token
+      responses:
+        '200':
+          description: Token refreshed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /auth/change-password:
+    post:
+      tags: [Authentication]
+      summary: Change Password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                oldPassword: { type: string }
+                newPassword: { type: string }
+      responses:
+        '200':
+          description: Password updated
+  /sectors:
+    post:
+      tags: [Sectors]
+      summary: Create new Sector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sector'
+      responses:
+        '201':
+          description: Created
+    get:
+      tags: [Sectors]
+      summary: Get Paginated Sectors
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+        - $ref: '#/components/parameters/SearchParam'
+      responses:
+        '200':
+          description: Success
+  /sectors/all:
+    get:
+      tags: [Sectors]
+      summary: Get All Active Sectors (Public)
+      security: []
+      responses:
+        '200':
+          description: Success
+  /sectors/{id}:
+    get:
+      tags: [Sectors]
+      summary: Get Sector by ID
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Success
+    put:
+      tags: [Sectors]
+      summary: Update Sector
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sector'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Sectors]
+      summary: Delete Sector
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Deleted
+  /sectors/{id}/status:
+    patch:
+      tags: [Sectors]
+      summary: Update Sector Status
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_active: { type: boolean }
+      responses:
+        '200':
+          description: Updated
+  /sectors/{id}/image:
+    patch:
+      tags: [Sectors]
+      summary: Upload Sector Image
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Uploaded
+  /city-information:
+    get:
+      tags: [City Information]
+      summary: Get City Information (Public)
+      security: []
+      responses:
+        '200':
+          description: Success
+    post:
+      tags: [City Information]
+      summary: Create City Information (Singleton)
+      responses:
+        '201':
+          description: Created
+    put:
+      tags: [City Information]
+      summary: Update City Information
+      responses:
+        '200':
+          description: Updated
+  /city-information/logo:
+    patch:
+      tags: [City Information]
+      summary: Upload Logo
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                logo: { type: string, format: binary }
+      responses:
+        '200':
+          description: Uploaded
+  /city-information/banner:
+    patch:
+      tags: [City Information]
+      summary: Upload Banner
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                banner: { type: string, format: binary }
+      responses:
+        '200':
+          description: Uploaded
+  /city-information/mayor-image:
+    patch:
+      tags: [City Information]
+      summary: Upload Mayor Image
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                mayor_image: { type: string, format: binary }
+      responses:
+        '200':
+          description: Uploaded
+  /contact-messages:
+    post:
+      tags: [Contact Messages]
+      summary: Submit Message (Public)
+      security: []
+      responses:
+        '201':
+          description: Created
+    get:
+      tags: [Contact Messages]
+      summary: Get Messages
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Success
+  /contact-messages/{id}:
+    get:
+      tags: [Contact Messages]
+      summary: Get Message by ID
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags: [Contact Messages]
+      summary: Permanently Delete Message
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Deleted
+  /contact-messages/{id}/status:
+    patch:
+      tags: [Contact Messages]
+      summary: Update Message Status
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status: { type: string, enum: [Unread, Read] }
+      responses:
+        '200':
+          description: Updated
+  /dashboard:
+    get:
+      tags: [Dashboard]
+      summary: Get Dashboard Aggregations
+      responses:
+        '200':
+          description: Success
+  /dashboard/system-health:
+    get:
+      tags: [Dashboard]
+      summary: Get Database/Node Health
+      responses:
+        '200':
+          description: Success
+  /audit-logs:
+    get:
+      tags: [Audit Logs]
+      summary: Retrieve Paginated Audit Logs
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+        - $ref: '#/components/parameters/SearchParam'
+      responses:
+        '200':
+          description: Success
+  /audit-logs/{id}:
+    get:
+      tags: [Audit Logs]
+      summary: Get Audit Log by ID
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags: [Audit Logs]
+      summary: Purge Audit Log (SuperAdmin Only)
+      parameters:
+        - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Success
+  /health:
+    get:
+      tags: [System]
+      summary: Check API Liveliness
+      security: []
+      responses:
+        '200':
+          description: OK
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    PageParam:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    LimitParam:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 10
+    SearchParam:
+      name: search
+      in: query
+      schema:
+        type: string
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        success: { type: boolean, example: true }
+        message: { type: string, example: "Operation successful" }
+        data: { type: object }
+        pagination:
+          type: object
+          properties:
+            total: { type: integer }
+            page: { type: integer }
+            limit: { type: integer }
+            totalPages: { type: integer }
+    ApiError:
+      type: object
+      properties:
+        success: { type: boolean, example: false }
+        message: { type: string, example: "Validation failed" }
+        errorCode: { type: string, example: "VALIDATION_ERROR" }
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string, format: email, example: "admin@cais.gov" }
+        password: { type: string, example: "SecurePass123!" }
+    AuthResponse:
+      type: object
+      properties:
+        success: { type: boolean, example: true }
+        message: { type: string, example: "Login successful" }
+        data:
+          type: object
+          properties:
+            token: { type: string }
+            user:
+              type: object
+              properties:
+                id: { type: integer }
+                role: { type: string }
+    Sector:
+      type: object
+      properties:
+        name: { type: string }
+        description: { type: string }
+  responses:
+    Unauthorized:
+      description: Missing or invalid token
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Forbidden:
+      description: Insufficient RBAC permissions
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'

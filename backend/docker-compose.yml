@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  cais_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cais_api_server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=cais_db
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN}
+      - UPLOAD_PATH=/app/src/uploads
+      - LOG_LEVEL=info
+    volumes:
+      - cais_uploads:/app/src/uploads
+      - cais_logs:/app/logs
+    depends_on:
+      cais_db:
+        condition: service_healthy
+    networks:
+      - cais_network
+
+  cais_db:
+    image: mysql:8.0
+    container_name: cais_database
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - cais_db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - cais_network
+
+volumes:
+  cais_uploads:
+    name: cais_persistent_uploads
+  cais_db_data:
+    name: cais_persistent_database
+  cais_logs:
+    name: cais_persistent_logs
+
+networks:
+  cais_network:
+    driver: bridge
