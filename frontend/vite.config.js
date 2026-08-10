@@ -38,10 +38,20 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            // React core runtime: react, react-dom, react-router, and scheduler
+            // (scheduler is a direct dependency of react-dom and MUST stay
+            //  in the same chunk to avoid circular imports)
+            if (
+              id.includes('node_modules/react/') ||
+              id.includes('node_modules/react-dom/') ||
+              id.includes('node_modules/react-router-dom/') ||
+              id.includes('node_modules/react-router/') ||
+              id.includes('node_modules/@remix-run/router/') ||
+              id.includes('node_modules/scheduler/')
+            ) {
               return 'vendor-react';
             }
-            if (id.includes('recharts')) {
+            if (id.includes('node_modules/recharts/') || id.includes('node_modules/react-smooth/')) {
               return 'vendor-charts';
             }
             return 'vendor';
