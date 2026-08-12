@@ -28,9 +28,12 @@ const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit:    10,
     queueLimit:         0,
+    connectTimeout:     30000, // 30s timeout for cloud DB connections
     timezone:           '+00:00',
     charset:            'utf8mb4',
     decimalNumbers:     true,
+    // Enable SSL for cloud MySQL providers (Aiven, PlanetScale, etc.)
+    ...(process.env.DB_SSL === 'true' && { ssl: { rejectUnauthorized: true } }),
 });
 
 /**
@@ -99,8 +102,8 @@ pool.testConnection = async () => {
         console.error(JSON.stringify(structuredError, null, 2));
         console.error('\n   Action Required: Please check your MySQL configuration or run the setup_user.sql script.');
         
-        // Exit gracefully so we don't start the Express server
-        process.exit(1);
+        // Do not exit in production so cloud platforms (Render) can still bind to the port and pass health checks.
+        // The API will return 500s or DB errors, but the service will stay running.
     }
 };
 

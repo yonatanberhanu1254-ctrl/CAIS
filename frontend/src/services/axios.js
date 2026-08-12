@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
  * Automatically handles JWT injection, baseURL mapping, and 401/403 forced logouts.
  */
 const api = axios.create({
-  baseURL: '/api/v1', // Proxied via Vite in dev, mapped directly in Prod
+  baseURL: import.meta.env.VITE_API_URL || '/api/v1', // Proxied via Vite in dev, mapped directly in Prod
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
