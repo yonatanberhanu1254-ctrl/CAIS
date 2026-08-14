@@ -22,8 +22,13 @@ async function initCloudDB() {
         // 1. Read and execute schema.sql
         console.log('Reading database/schema.sql...');
         const schemaPath = path.join(__dirname, 'database', 'schema.sql');
-        const schemaSql = fs.readFileSync(schemaPath, 'utf8');
+        let schemaSql = fs.readFileSync(schemaPath, 'utf8');
         
+        // Remove CREATE DATABASE and USE statements for cloud environments
+        // so that it executes in the provided DB_NAME instead of cais_db
+        schemaSql = schemaSql.replace(/CREATE DATABASE IF NOT EXISTS cais_db[^;]*;/gi, '');
+        schemaSql = schemaSql.replace(/USE cais_db;/gi, '');
+
         console.log('Executing schema.sql to create tables...');
         await conn.query(schemaSql);
         console.log('Tables created successfully!');
