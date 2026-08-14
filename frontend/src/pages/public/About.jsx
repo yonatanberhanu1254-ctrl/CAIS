@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import api from '../../services/axios';
 import PageHeader from '../../components/public/PageHeader';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const About = () => {
   const { t, i18n } = useTranslation();
@@ -36,7 +37,7 @@ const About = () => {
               
               {cityInfo?.logo_url && (
                 <div className="mt-8">
-                  <img src={cityInfo.logo_url} alt="Official City Logo" className="h-32 w-auto object-contain" />
+                  <img src={getImageUrl(cityInfo.logo_url)} alt="Official City Logo" className="h-32 w-auto object-contain" />
                 </div>
               )}
             </div>

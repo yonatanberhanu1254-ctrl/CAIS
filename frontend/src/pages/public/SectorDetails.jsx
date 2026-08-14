@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import api from '../../services/axios';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ArrowLeftIcon, ClockIcon, MapIcon } from '@heroicons/react/24/outline';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const SectorDetails = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const SectorDetails = () => {
       {/* Dynamic Header */}
       <div className="relative bg-slate-900 h-80">
         {sector.image_url && (
-           <img src={sector.image_url} alt="" className="w-full h-full object-cover opacity-30" />
+           <img src={getImageUrl(sector.image_url)} alt="" className="w-full h-full object-cover opacity-30" />
         )}
         <div className="absolute inset-0 flex flex-col justify-end px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-12">
           <Link to="/sectors" className="text-blue-400 hover:text-blue-300 flex items-center mb-6 text-sm font-medium w-fit">

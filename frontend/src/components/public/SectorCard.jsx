@@ -1,3 +1,4 @@
+import { getImageUrl } from '../../utils/imageUrl';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +11,7 @@ const SectorCard = ({ sector }) => {
       <div className="h-48 overflow-hidden bg-slate-100">
         {sector.image_url ? (
           <img 
-            src={sector.image_url} 
+            src={getImageUrl(sector.image_url)} 
             alt={t('public.sectorCard.imgAlt', { name: sector.name })} 
             className="w-full h-full object-cover"
             loading="lazy" 

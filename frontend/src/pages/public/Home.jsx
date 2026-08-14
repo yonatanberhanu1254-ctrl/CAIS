@@ -5,6 +5,7 @@ import api from '../../services/axios';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BuildingLibraryIcon, UserGroupIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -30,7 +31,7 @@ const Home = () => {
       <div className="relative bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={cityInfo?.banner_url || "/images/asella_banner.png"}
+            src={getImageUrl(cityInfo?.banner_url) || "/images/asella_banner.png"}
             alt="City Skyline"
             className="w-full h-full object-cover opacity-30"
           />
@@ -111,7 +112,7 @@ const Home = () => {
           </div>
           <div className="mt-8 lg:mt-0 relative rounded-lg shadow-xl overflow-hidden group">
             <img
-              src={cityInfo?.mayor_image_url || 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1548&auto=format&fit=crop'}
+              src={getImageUrl(cityInfo?.mayor_image_url) || 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1548&auto=format&fit=crop'}
               alt="City Mayor"
               className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />

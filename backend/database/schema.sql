@@ -179,7 +179,7 @@ VALUES (
 );
 
 -- City Information
-INSERT IGNORE INTO city_information (city_name_en, mayor_name, mayor_message_en, about_city_en, vision_en, mission_en, history_en, address_en, email, phone, office_hours, latitude, longitude)
+INSERT IGNORE INTO city_information (city_name_en, mayor_name, mayor_message_en, about_city_en, vision_en, mission_en, history_en, address_en, email, phone, office_hours, latitude, longitude, logo_url, banner_url)
 VALUES (
     'Asella City',
     'Mayor Girma Tesfaye',
@@ -192,19 +192,20 @@ VALUES (
     'info@asellacity.gov.et',
     '+251222680000',
     'Monday - Friday: 8:00 AM - 5:00 PM',
-    7.9500,
-    39.1333
+    39.1333,
+    '/uploads/city/4a2acfe3-a1ac-4aa3-b823-64550766f73b.png',
+    '/uploads/city/7728c863-d080-484b-acce-54ab8feb1224.jpeg'
 );
 
 -- Sectors
-INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
-SELECT 'Administration Office', 'Central administrative governance', 'The Administration Office coordinates citywide governance and administrative policies for Asella City.', 'To ensure seamless delivery of administrative services to all citizens.', 'A model administration office for Oromia Region.', 'City Hall, Floor 1, Asella', 'admin@asellacity.gov.et', '+251222680001', 'Mon-Fri 8am-5pm', 7.9502, 39.1335, 'https://maps.google.com/maps?q=7.9502,39.1335&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, image_url, is_active, updated_by)
+SELECT 'Administration Office', 'Central administrative governance', 'The Administration Office coordinates citywide governance and administrative policies for Asella City.', 'To ensure seamless delivery of administrative services to all citizens.', 'A model administration office for Oromia Region.', 'City Hall, Floor 1, Asella', 'admin@asellacity.gov.et', '+251222680001', 'Mon-Fri 8am-5pm', 7.9502, 39.1335, 'https://maps.google.com/maps?q=7.9502,39.1335&t=&z=15&ie=UTF8&iwloc=&output=embed', '/uploads/sectors/sector-c56b7afc-f824-458c-82f4-4bca05aa3e7b.jpeg', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
-SELECT 'Finance Office', 'Manages city budget and taxes', 'Responsible for revenue collection, budgeting, and financial planning for Asella City.', 'To manage public finances with transparency and accountability.', 'A financially strong city government serving all residents.', 'Finance Building, Room 201, Asella', 'finance@asellacity.gov.et', '+251222680002', 'Mon-Fri 8am-4pm', 7.9498, 39.1330, 'https://maps.google.com/maps?q=7.9498,39.1330&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, image_url, is_active, updated_by)
+SELECT 'Finance Office', 'Manages city budget and taxes', 'Responsible for revenue collection, budgeting, and financial planning for Asella City.', 'To manage public finances with transparency and accountability.', 'A financially strong city government serving all residents.', 'Finance Building, Room 201, Asella', 'finance@asellacity.gov.et', '+251222680002', 'Mon-Fri 8am-4pm', 7.9498, 39.1330, 'https://maps.google.com/maps?q=7.9498,39.1330&t=&z=15&ie=UTF8&iwloc=&output=embed', '/uploads/sectors/sector-ce4b94ea-c6d5-43c8-8edb-ebdcf6733971.jpeg', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
-SELECT 'Health Office', 'Public health and sanitation', 'Oversees public health clinics, sanitation programs, and disease prevention in Asella City.', 'To promote and protect the health of every citizen in Asella.', 'A healthy community with access to quality healthcare for all.', 'Health Center, 1st Avenue, Asella', 'health@asellacity.gov.et', '+251222680003', '24/7', 7.9510, 39.1340, 'https://maps.google.com/maps?q=7.9510,39.1340&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, image_url, is_active, updated_by)
+SELECT 'Health Office', 'Public health and sanitation', 'Oversees public health clinics, sanitation programs, and disease prevention in Asella City.', 'To promote and protect the health of every citizen in Asella.', 'A healthy community with access to quality healthcare for all.', 'Health Center, 1st Avenue, Asella', 'health@asellacity.gov.et', '+251222680003', '24/7', 7.9510, 39.1340, 'https://maps.google.com/maps?q=7.9510,39.1340&t=&z=15&ie=UTF8&iwloc=&output=embed', '/uploads/sectors/sector-e9497a04-9a97-4570-b3e8-9a584e95894b.jpeg', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
 INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Education Office', 'Manages public education systems', 'Coordinates schools, adult education programs, and community libraries across Asella City.', 'To ensure quality education for all children and adults in Asella.', 'An educated, empowered community driving regional development.', 'Education Complex, Block B, Asella', 'education@asellacity.gov.et', '+251222680004', 'Mon-Fri 8am-4pm', 7.9495, 39.1325, 'https://maps.google.com/maps?q=7.9495,39.1325&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;

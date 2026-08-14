@@ -6,6 +6,7 @@ import api from '../../../services/axios';
 import toast from 'react-hot-toast';
 import { PhotoIcon, UserIcon } from '@heroicons/react/24/outline';
 import MultilingualInput from '../../../components/admin/MultilingualInput';
+import { getImageUrl } from '../../../utils/imageUrl';
 
 const CityInformationManagement = () => {
   const queryClient = useQueryClient();
@@ -236,7 +237,7 @@ const CityInformationManagement = () => {
             <div className="mt-4 flex justify-center rounded-lg border border-dashed border-slate-900/25 px-6 py-10 bg-slate-50">
               <div className="text-center">
                 {cityInfo?.logo_url ? (
-                  <img src={cityInfo.logo_url} alt="Logo preview" className="mx-auto h-24 w-auto mb-4 object-contain" />
+                  <img src={getImageUrl(cityInfo.logo_url)} alt="Logo preview" className="mx-auto h-24 w-auto mb-4 object-contain" />
                 ) : (
                   <PhotoIcon className="mx-auto h-12 w-12 text-slate-300 mb-4" aria-hidden="true" />
                 )}
@@ -254,7 +255,7 @@ const CityInformationManagement = () => {
             <h3 className="text-base font-semibold leading-7 text-slate-900">{t('admin.cityInfo.media.banner')}</h3>
             <div className="mt-4 flex justify-center rounded-lg border border-dashed border-slate-900/25 px-6 py-10 relative overflow-hidden bg-slate-50">
                {cityInfo?.banner_url && (
-                 <img src={cityInfo.banner_url} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+                 <img src={getImageUrl(cityInfo.banner_url)} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
                )}
                <div className="text-center relative z-10">
                   <PhotoIcon className="mx-auto h-12 w-12 text-slate-300 mb-4" aria-hidden="true" />
@@ -273,7 +274,7 @@ const CityInformationManagement = () => {
             <div className="mt-4 flex justify-center rounded-lg border border-dashed border-slate-900/25 px-6 py-10 bg-slate-50">
               <div className="text-center">
                 {cityInfo?.mayor_image_url ? (
-                  <img src={cityInfo.mayor_image_url} alt="Mayor preview" className="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-sm" />
+                  <img src={getImageUrl(cityInfo.mayor_image_url)} alt="Mayor preview" className="mx-auto h-24 w-24 rounded-full object-cover mb-4 shadow-sm" />
                 ) : (
                   <UserIcon className="mx-auto h-12 w-12 text-slate-300 mb-4" aria-hidden="true" />
                 )}

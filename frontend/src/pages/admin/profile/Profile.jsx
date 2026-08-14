@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import api from '../../../services/axios';
 import toast from 'react-hot-toast';
 import { UserCircleIcon, PhotoIcon } from '@heroicons/react/24/solid';
+import { getImageUrl } from '../../../utils/imageUrl';
 
 const Profile = () => {
   const { user } = useAuth();

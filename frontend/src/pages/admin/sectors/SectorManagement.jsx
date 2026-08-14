@@ -8,6 +8,7 @@ import { TrashIcon, PencilIcon, PlusIcon, XMarkIcon, PhotoIcon } from '@heroicon
 import MapPicker from '../../../components/admin/MapPicker';
 import MultilingualInput from '../../../components/admin/MultilingualInput';
 import clsx from 'clsx';
+import { getImageUrl } from '../../../utils/imageUrl';
 
 const SectorManagement = () => {
   const queryClient = useQueryClient();
@@ -189,7 +190,7 @@ const SectorManagement = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="h-10 w-10 flex-shrink-0 relative group">
                         {sector.image_url ? (
-                          <img className="h-10 w-10 rounded-md object-cover" src={sector.image_url} alt="" />
+                          <img className="h-10 w-10 rounded-md object-cover" src={getImageUrl(sector.image_url)} alt="" />
                         ) : (
                           <div className="h-10 w-10 rounded-md bg-slate-100 flex items-center justify-center">
                             <PhotoIcon className="h-6 w-6 text-slate-400" />

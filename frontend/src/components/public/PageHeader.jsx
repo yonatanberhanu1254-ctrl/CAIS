@@ -1,4 +1,5 @@
 import React from 'react';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const PageHeader = ({ title, description, backgroundImage }) => {
   return (
