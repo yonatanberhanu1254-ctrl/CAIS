@@ -1,6 +1,6 @@
 -- ============================================================
 -- CAIS - City Administration Information System
--- Full Database Schema + Seed Data
+-- Full Database Schema + Seed Data (Multilingual)
 -- Asella City, Arsi Zone, Oromia Region, Ethiopia
 -- ============================================================
 
@@ -32,12 +32,27 @@ CREATE TABLE IF NOT EXISTS admins (
 -- ============================================================
 CREATE TABLE IF NOT EXISTS sectors (
     id                  INT UNSIGNED    NOT NULL AUTO_INCREMENT,
-    name                VARCHAR(255)    NOT NULL UNIQUE,
-    short_description   VARCHAR(500)    NULL,
-    description         TEXT            NOT NULL,
-    mission             TEXT            NULL,
-    vision              TEXT            NULL,
-    address             VARCHAR(500)    NULL,
+    name_en             VARCHAR(255)    NOT NULL UNIQUE,
+    name_am             VARCHAR(255)    NULL,
+    name_om             VARCHAR(255)    NULL,
+    description_en      TEXT            NOT NULL,
+    description_am      TEXT            NULL,
+    description_om      TEXT            NULL,
+    short_description_en VARCHAR(500)   NULL,
+    short_description_am VARCHAR(500)   NULL,
+    short_description_om VARCHAR(500)   NULL,
+    mission_en          TEXT            NULL,
+    mission_am          TEXT            NULL,
+    mission_om          TEXT            NULL,
+    vision_en           TEXT            NULL,
+    vision_am           TEXT            NULL,
+    vision_om           TEXT            NULL,
+    services_en         TEXT            NULL,
+    services_am         TEXT            NULL,
+    services_om         TEXT            NULL,
+    office_location_en  VARCHAR(500)    NULL,
+    office_location_am  VARCHAR(500)    NULL,
+    office_location_om  VARCHAR(500)    NULL,
     email               VARCHAR(255)    NULL,
     phone               VARCHAR(50)     NULL,
     office_hours        VARCHAR(255)    NULL,
@@ -50,7 +65,7 @@ CREATE TABLE IF NOT EXISTS sectors (
     created_at          DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at          DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
-    INDEX idx_name      (name),
+    INDEX idx_name_en   (name_en),
     INDEX idx_is_active (is_active),
     INDEX idx_updated_at (updated_at),
     CONSTRAINT fk_sectors_admin FOREIGN KEY (updated_by) REFERENCES admins(id) ON DELETE SET NULL
@@ -60,29 +75,46 @@ CREATE TABLE IF NOT EXISTS sectors (
 -- TABLE: city_information (singleton)
 -- ============================================================
 CREATE TABLE IF NOT EXISTS city_information (
-    id              INT UNSIGNED    NOT NULL AUTO_INCREMENT,
-    city_name       VARCHAR(255)    NOT NULL DEFAULT 'Asella City',
-    mayor_name      VARCHAR(255)    NULL,
-    mayor_message   TEXT            NULL,
-    mayor_image_url VARCHAR(500)    NULL,
-    about_city      TEXT            NULL,
-    vision          TEXT            NULL,
-    mission         TEXT            NULL,
-    history         TEXT            NULL,
-    address         VARCHAR(500)    NULL,
-    email           VARCHAR(255)    NULL,
-    phone           VARCHAR(50)     NULL,
-    office_hours    VARCHAR(255)    NULL,
-    facebook_url    VARCHAR(500)    NULL,
-    telegram_url    VARCHAR(500)    NULL,
-    website_url     VARCHAR(500)    NULL,
-    latitude        DECIMAL(10,7)   NULL,
-    longitude       DECIMAL(10,7)   NULL,
-    logo_url        VARCHAR(500)    NULL,
-    banner_url      VARCHAR(500)    NULL,
-    updated_by      INT UNSIGNED    NULL,
-    created_at      DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at      DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    id                  INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    city_name_en        VARCHAR(255)    NOT NULL DEFAULT 'Asella City',
+    city_name_am        VARCHAR(255)    NULL,
+    city_name_om        VARCHAR(255)    NULL,
+    mayor_name          VARCHAR(255)    NULL,
+    mayor_message_en    TEXT            NULL,
+    mayor_message_am    TEXT            NULL,
+    mayor_message_om    TEXT            NULL,
+    welcome_message_en  TEXT            NULL,
+    welcome_message_am  TEXT            NULL,
+    welcome_message_om  TEXT            NULL,
+    mayor_image_url     VARCHAR(500)    NULL,
+    about_city_en       TEXT            NULL,
+    about_city_am       TEXT            NULL,
+    about_city_om       TEXT            NULL,
+    vision_en           TEXT            NULL,
+    vision_am           TEXT            NULL,
+    vision_om           TEXT            NULL,
+    mission_en          TEXT            NULL,
+    mission_am          TEXT            NULL,
+    mission_om          TEXT            NULL,
+    history_en          TEXT            NULL,
+    history_am          TEXT            NULL,
+    history_om          TEXT            NULL,
+    address_en          VARCHAR(500)    NULL,
+    address_am          VARCHAR(500)    NULL,
+    address_om          VARCHAR(500)    NULL,
+    email               VARCHAR(255)    NULL,
+    phone               VARCHAR(50)     NULL,
+    office_hours        VARCHAR(255)    NULL,
+    facebook_url        VARCHAR(500)    NULL,
+    telegram_url        VARCHAR(500)    NULL,
+    website_url         VARCHAR(500)    NULL,
+    latitude            DECIMAL(10,7)   NULL,
+    longitude           DECIMAL(10,7)   NULL,
+    logo_url            VARCHAR(500)    NULL,
+    banner_url          VARCHAR(500)    NULL,
+    updated_by          INT UNSIGNED    NULL,
+    created_at          DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at          DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     CONSTRAINT fk_cityinfo_admin FOREIGN KEY (updated_by) REFERENCES admins(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -147,7 +179,7 @@ VALUES (
 );
 
 -- City Information
-INSERT IGNORE INTO city_information (city_name, mayor_name, mayor_message, about_city, vision, mission, history, address, email, phone, office_hours, latitude, longitude)
+INSERT IGNORE INTO city_information (city_name_en, mayor_name, mayor_message_en, about_city_en, vision_en, mission_en, history_en, address_en, email, phone, office_hours, latitude, longitude)
 VALUES (
     'Asella City',
     'Mayor Girma Tesfaye',
@@ -165,34 +197,34 @@ VALUES (
 );
 
 -- Sectors
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Administration Office', 'Central administrative governance', 'The Administration Office coordinates citywide governance and administrative policies for Asella City.', 'To ensure seamless delivery of administrative services to all citizens.', 'A model administration office for Oromia Region.', 'City Hall, Floor 1, Asella', 'admin@asellacity.gov.et', '+251222680001', 'Mon-Fri 8am-5pm', 7.9502, 39.1335, 'https://maps.google.com/maps?q=7.9502,39.1335&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Finance Office', 'Manages city budget and taxes', 'Responsible for revenue collection, budgeting, and financial planning for Asella City.', 'To manage public finances with transparency and accountability.', 'A financially strong city government serving all residents.', 'Finance Building, Room 201, Asella', 'finance@asellacity.gov.et', '+251222680002', 'Mon-Fri 8am-4pm', 7.9498, 39.1330, 'https://maps.google.com/maps?q=7.9498,39.1330&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Health Office', 'Public health and sanitation', 'Oversees public health clinics, sanitation programs, and disease prevention in Asella City.', 'To promote and protect the health of every citizen in Asella.', 'A healthy community with access to quality healthcare for all.', 'Health Center, 1st Avenue, Asella', 'health@asellacity.gov.et', '+251222680003', '24/7', 7.9510, 39.1340, 'https://maps.google.com/maps?q=7.9510,39.1340&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Education Office', 'Manages public education systems', 'Coordinates schools, adult education programs, and community libraries across Asella City.', 'To ensure quality education for all children and adults in Asella.', 'An educated, empowered community driving regional development.', 'Education Complex, Block B, Asella', 'education@asellacity.gov.et', '+251222680004', 'Mon-Fri 8am-4pm', 7.9495, 39.1325, 'https://maps.google.com/maps?q=7.9495,39.1325&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Agriculture Office', 'Farming and rural development', 'Supports local farmers, agricultural grants, and sustainability programs for the Arsi Zone.', 'To promote sustainable agriculture and food security in Asella.', 'A prosperous agricultural sector supporting the entire Arsi Zone.', 'Green Building, 3rd Floor, Asella', 'agri@asellacity.gov.et', '+251222680005', 'Mon-Fri 7am-3pm', 7.9520, 39.1350, 'https://maps.google.com/maps?q=7.9520,39.1350&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Water & Sanitation Office', 'Water supply and treatment', 'Maintains city water infrastructure, safety standards, and sewage systems for Asella City.', 'To provide clean, safe, and reliable water to every household in Asella.', 'A city where every resident has access to clean water and sanitation.', 'Water Department, South Wing, Asella', 'water@asellacity.gov.et', '+251222680006', '24/7', 7.9485, 39.1320, 'https://maps.google.com/maps?q=7.9485,39.1320&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Land Administration Office', 'Zoning and land registry', 'Handles property registration, urban zoning, and land dispute resolution in Asella City.', 'To ensure fair, transparent, and efficient land administration for all citizens.', 'An organized urban environment with clear and equitable land rights.', 'City Hall Annex, Floor 4, Asella', 'land@asellacity.gov.et', '+251222680007', 'Mon-Fri 8am-5pm', 7.9505, 39.1345, 'https://maps.google.com/maps?q=7.9505,39.1345&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Women & Children Affairs Office', 'Empowerment and equality', 'Promotes women''s rights, children''s welfare, equal opportunities, and support services in Asella.', 'To empower women and protect children across Asella City.', 'A city where women and children thrive with dignity and opportunity.', 'Community Center, Room 12, Asella', 'women@asellacity.gov.et', '+251222680008', 'Mon-Fri 9am-5pm', 7.9492, 39.1328, 'https://maps.google.com/maps?q=7.9492,39.1328&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Youth & Sports Office', 'Youth programs and recreation', 'Coordinates sports leagues, youth centers, and recreational activities throughout Asella City.', 'To empower youth through sports, education, and community engagement.', 'A dynamic, youthful city leading Oromia in sports and culture.', 'Sports Arena Plaza, Asella', 'youth@asellacity.gov.et', '+251222680009', 'Tue-Sat 10am-6pm', 7.9515, 39.1355, 'https://maps.google.com/maps?q=7.9515,39.1355&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
-INSERT IGNORE INTO sectors (name, short_description, description, mission, vision, address, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
+INSERT IGNORE INTO sectors (name_en, short_description_en, description_en, mission_en, vision_en, office_location_en, email, phone, office_hours, latitude, longitude, google_maps_url, is_active, updated_by)
 SELECT 'Trade & Industry Office', 'Commerce and local business', 'Business licensing, market regulation, and economic development for Asella City.', 'To foster a thriving business environment that creates jobs and prosperity.', 'Asella as a leading commercial hub in the Arsi Zone.', 'Commerce Tower, 2nd Floor, Asella', 'trade@asellacity.gov.et', '+251222680010', 'Mon-Fri 8am-5pm', 7.9488, 39.1318, 'https://maps.google.com/maps?q=7.9488,39.1318&t=&z=15&ie=UTF8&iwloc=&output=embed', 1, id FROM admins WHERE email='admin@cais.gov.et' LIMIT 1;
 
 -- Sample contact messages
