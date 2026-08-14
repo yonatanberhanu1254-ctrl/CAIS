@@ -28,15 +28,6 @@ async function initCloudDB() {
         await conn.query(schemaSql);
         console.log('Tables created successfully!');
 
-        // 2. Read and execute setup_user.sql
-        console.log('Reading database/setup_user.sql...');
-        const setupUserPath = path.join(__dirname, 'database', 'setup_user.sql');
-        const setupUserSql = fs.readFileSync(setupUserPath, 'utf8');
-
-        console.log('Executing setup_user.sql to insert default admin...');
-        await conn.query(setupUserSql);
-        console.log('Default admin inserted successfully!');
-
         conn.release();
         console.log('Cloud database initialization complete! You can now log in.');
         process.exit(0);
