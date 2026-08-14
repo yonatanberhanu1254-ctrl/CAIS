@@ -37,10 +37,10 @@ async function initCloudDB() {
         }
 
         if (columns.length > 0 && hasSeedData) {
-            console.log('Database already initialized with correct schema and seed data. Forcing a rebuild to clear duplicates...');
-            // conn.release();
-            // await pool.end();
-            // process.exit(0);
+            console.log('Database already initialized with correct schema and seed data. Skipping.');
+            conn.release();
+            await pool.end();
+            process.exit(0);
         }
 
         console.log('Database needs initialization. Dropping existing tables and recreating...');
