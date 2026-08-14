@@ -33,7 +33,7 @@ const pool = mysql.createPool({
     charset:            'utf8mb4',
     decimalNumbers:     true,
     // Enable SSL for cloud MySQL providers (Aiven, PlanetScale, etc.)
-    ...(process.env.DB_SSL === 'true' && { ssl: { rejectUnauthorized: true } }),
+    ...(process.env.DB_SSL === 'true' && { ssl: { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED === 'true' } }),
 });
 
 /**
