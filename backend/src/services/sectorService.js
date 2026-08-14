@@ -27,8 +27,8 @@ class SectorService {
     }
 
     async createSector(data, adminId) {
-        const existing = await SectorModel.findByName(data.name);
-        if (existing) throw new ApiError(httpStatus.CONFLICT, `A sector named "${data.name}" already exists.`, 'SECTOR_DUPLICATE_NAME');
+        const existing = await SectorModel.findByName(data.name_en);
+        if (existing) throw new ApiError(httpStatus.CONFLICT, `A sector named "${data.name_en}" already exists.`, 'SECTOR_DUPLICATE_NAME');
         data.updated_by = adminId;
         const insertId = await SectorModel.create(data);
         return await SectorModel.findById(insertId);
@@ -37,9 +37,9 @@ class SectorService {
     async updateSector(id, data, adminId) {
         const exists = await SectorModel.exists(id);
         if (!exists) throw new ApiError(httpStatus.NOT_FOUND, 'Sector not found.', 'SECTOR_NOT_FOUND');
-        if (data.name) {
-            const duplicate = await SectorModel.findByName(data.name, id);
-            if (duplicate) throw new ApiError(httpStatus.CONFLICT, `A sector named "${data.name}" already exists.`, 'SECTOR_DUPLICATE_NAME');
+        if (data.name_en) {
+            const duplicate = await SectorModel.findByName(data.name_en, id);
+            if (duplicate) throw new ApiError(httpStatus.CONFLICT, `A sector named "${data.name_en}" already exists.`, 'SECTOR_DUPLICATE_NAME');
         }
         data.updated_by = adminId;
         await SectorModel.update(id, data);

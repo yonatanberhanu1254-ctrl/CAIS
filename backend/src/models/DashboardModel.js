@@ -71,7 +71,7 @@ class DashboardModel {
     static async getRecentSectorUpdates(limit = 10, executor = db) {
         try {
             const [rows] = await executor.execute(
-                'SELECT id, name, is_active, updated_at, updated_by FROM sectors ORDER BY updated_at DESC LIMIT ?',
+                'SELECT id, name_en, is_active, updated_at, updated_by FROM sectors ORDER BY updated_at DESC LIMIT ?',
                 [limit]
             );
             return rows || [];
