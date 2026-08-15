@@ -192,6 +192,7 @@ VALUES (
     'info@asellacity.gov.et',
     '+251222680000',
     'Monday - Friday: 8:00 AM - 5:00 PM',
+    7.9533,
     39.1333,
     '/uploads/city/4a2acfe3-a1ac-4aa3-b823-64550766f73b.png',
     '/uploads/city/7728c863-d080-484b-acce-54ab8feb1224.jpeg'
