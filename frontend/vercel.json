@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/v1/:path*", "destination": "https://your-cais-backend.onrender.com/api/v1/:path*" },
+    { "source": "/api/v1/:path*", "destination": "https://cais-api-25vo.onrender.com/api/v1/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
